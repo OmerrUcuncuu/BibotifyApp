@@ -1,0 +1,13 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\BibotifyApp",
+    "\\BibotifyApp\\Controllers",
+    "\\BibotifyApp\\Models",
+    "\\BibotifyApp\\Views",
+    "\\BibotifyApp\\Views\\Bibotify",
+    "\\BibotifyApp\\wwwroot"
+  ],
+  "SelectedNode": "\\BibotifyApp\\obj",
+  "PreviewInSolutionExplorer": false
+}

@@ -1,0 +1,120 @@
+﻿@using BibotifyApp.Models
+@model BibotifyViewModel
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="/css/stlye.css">
+    
+</head>
+<body class="bg-dark">
+    <div class="bg-dark">
+        <nav class="navbar navbar-expand-lg bg-dark navbar-dark" style="border-bottom: 1px black solid">
+            <div class="container">
+                <a class="navbar-brand" href="/anasayfa"><img src="/images/bibotify.png" alt=""></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-5 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="/anasayfa">Anasayfa</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Kategoriler</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" aria-disabled="true">İletisim</a>
+                        </li>
+                    </ul>
+                    <form class="d-flex" role="search">
+                        <input class="form-control me-2" type="search" placeholder="Şarkı ara" aria-label="Search">
+                        <button class="btn btn-outline-success" type="submit">Ara</button>
+                    </form>
+                    <ul class="navbar-nav m-auto me-5 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link üyeol" href="kayıt"><i class="fa-solid fa-user-plus"></i> Kayıt ol</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link girisyap" href="giris"><i class="fa-solid fa-arrow-right-to-bracket"></i> Giriş yap</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div class="row">
+            <div class="col-md-2 bg-dark">
+                <div class="list-group bg-dark">
+                    <div class="butonlar">
+                        <button type="button" class="list-group-item list-group-item-action bg-dark text-white" style="height: 100px; font-weight: bold; border:none"><span>Hesap</span></button>
+                        <button type="button" class="list-group-item list-group-item-action bg-dark text-white" style="height: 100px; font-weight: bold; border:none"><span>Beğendiklerim</span></button>
+                        <button type="button" class="list-group-item list-group-item-action bg-dark text-white" style="height: 100px; font-weight: bold; border:none"><span>Playlist</span></button>
+                        <button type="button" class="list-group-item list-group-item-action bg-dark text-white" style="height: 100px; font-weight: bold; border:none" ><span>Ayarlar</span></button>
+                        <button type="button" class="list-group-item list-group-item-action bg-dark text-white" style="height: 100px; font-weight: bold; border:none"><span>İstatislikler</span></button>
+                    </div>
+                </div>
+                <p style="color: #48ae2f; padding:30px; margin-left: 50px; font-style: italic; font-weight: bolder;">En çok dinlenenler</p>
+            </div>
+            <div style="position: relative;" class="col-md-10 bg-dark">
+                <div class="container-fluid " style="padding: 0;">
+                    <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="/images/2m.jpg" class="d-block w-100" alt="...">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="/images/uzi.jpg" class="d-block w-100" alt="...">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="/images/xxx.jpg" class="d-block w-100" alt="...">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="/images/deha killoki.jpg" class="d-block w-100" alt="...">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div style="position: absolute; start:30%;" class="container mt-6 bg-dark">
+                    <div class="row row-cols-1 row-cols-md-4 g-4 bg-dark" style="justify-content: space-between;">
+                        @foreach (var sarkı in Model.Sarkılar)
+                        {
+                            <div class="card bg-dark text-white" style="width: 18rem; border: rgba(163, 163, 163, 0.11) 1px solid; padding: 0;">
+                                <img style="height: 190px;" src="/images/@(sarkı.Resim)" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <h5 class="card-title">@sarkı.Ad</h5>
+                                    <p class="card-text">@sarkı.Aciklama</p>
+                                    <a href="/Bibotify/Sarki/@(sarkı.Id)" class="btn btn-outline-success">Dinle!</a>
+                                </div>
+
+                            </div>
+                        }
+
+                    </div>
+                </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            </div>
+            <!-- insta | omerr.ice -->
+    </body>
+</html>
